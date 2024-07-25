@@ -6,6 +6,7 @@ public class Game {
     public final int GROUP_ROUNDS = 3;
     public static final int FINAL_ROUND_INDEX = 3;
     private static String [] questionsAndAnswers = new String[8];
+    private Tableau tableau;
 
     public void init () throws InterruptedException {
         int round = 1;
