@@ -7,7 +7,7 @@ public class Tableau {
     private char letter;
     private char[] letterArray;
 
-    public void initTableau (String correctWordFromGame){                        //инициализация табло
+    public void initTableau (String correctWordFromGame){
         this.correctWord = correctWordFromGame;
         char[] letterArray = new char[correctWord.length()];
         for (char ch: letterArray){
@@ -15,7 +15,10 @@ public class Tableau {
         }
     }
 
-    public void openLetter(char letter){                                 //проверка и открытие буквы
+    /**
+     * проверка и открытие буквы
+     */
+    public void openLetter(char letter){
         for(int i = 0; i < correctWord.length(); i++) {
             if (letter == correctWord.charAt(i)){
                 letterArray[i] = correctWord.charAt(i);
@@ -23,7 +26,10 @@ public class Tableau {
         }
     }
 
-    public void openWord (String word){                                    //проверка и открытие слова целиком
+    /**
+     * проверка и открытие слова целиком
+     */
+    public void openWord (String word){
         String wordInUpperCase = word.toUpperCase();
         if(wordInUpperCase.equals(correctWord)) {
             letterArray = correctWord.toCharArray();
@@ -33,7 +39,10 @@ public class Tableau {
         }
     }
 
-    public boolean hasUnknownLetters(){                                    //проверка остались ли неизвестные буквы
+    /**
+     * проверка остались ли неизвестные буквы
+     */
+    public boolean hasUnknownLetters(){
         for(int j = 0; j < letterArray.length; j++) {
             if(letterArray[j] == '_'){
                 return true;
@@ -42,15 +51,24 @@ public class Tableau {
         return false;
     }
 
-    public void showtableau (){                                            //отображение в консоли всех букв
+    /**
+     * отображение в консоли всех букв
+     */
+    public void showtableau (){
         System.out.println(letterArray);
     }
 
-    public boolean wordIsNotEmpty(String word){                             //проверка пустая ли строка со словом
+    /**
+     * проверка пустая ли строка со словом
+     */
+    private boolean wordIsNotEmpty(String word){
         return !word.isEmpty();
     }
 
-    public boolean letterIsNotEmpty(char letter){                          //проверка пустой ли символ
+    /**
+     * проверка пустой ли символ
+     */
+    private boolean letterIsNotEmpty(char letter){
         return !(letter == '\u0000');
 
     }
