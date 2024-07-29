@@ -5,11 +5,11 @@ import java.util.Locale;
 public class Tableau {
     private String correctWord;
     private char letter;
-    char [] letterArray;
+    private char[] letterArray;
 
     public void initTableau (String correctWordFromGame){                        //инициализация табло
         this.correctWord = correctWordFromGame;
-        char [] letterArray = new char[correctWord.length()];
+        char[] letterArray = new char[correctWord.length()];
         for (char ch: letterArray){
             letterArray[ch] = '_';
         }
@@ -47,17 +47,12 @@ public class Tableau {
     }
 
     public boolean wordIsNotEmpty(String word){                             //проверка пустая ли строка со словом
-        if(!word.isEmpty()) {
-            return true;
-        }
-        else return false;
+        return !word.isEmpty();
     }
 
     public boolean letterIsNotEmpty(char letter){                          //проверка пустой ли символ
-        if(!(letter == '\u0000')) {
-            return true;
-        }
-        else return false;
+        return !(letter == '\u0000');
+
     }
 
 }
