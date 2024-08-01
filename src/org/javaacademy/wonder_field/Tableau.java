@@ -18,25 +18,34 @@ public class Tableau {
     /**
      * проверка и открытие буквы
      */
-    public void openLetter(char letter){
+    public boolean openLetter(char letter){
+        boolean flag = false;
         for(int i = 0; i < correctWord.length(); i++) {
             if (letter == correctWord.charAt(i)){
                 letterArray[i] = correctWord.charAt(i);
+                flag = true;
             }
         }
+        if (flag == true) {
+            return true;
+        }
+        else return false;
     }
 
     /**
      * проверка и открытие слова целиком
      */
-    public void openWord (String word){
+    public boolean openWord (String word){
+        boolean flagWord = false;
         String wordInUpperCase = word.toUpperCase();
         if(wordInUpperCase.equals(correctWord)) {
             letterArray = correctWord.toCharArray();
+            flagWord = true;
         }
-        else {
-            System.out.println("Неправильный ответ!");
+        if (flagWord == true) {
+            return true;
         }
+        else return false;
     }
 
     /**
