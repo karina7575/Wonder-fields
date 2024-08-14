@@ -7,23 +7,35 @@ public class Player {
     private String city;
     private PlayerAnswer playerAnswer;
 
+    public Player(String name, String city) {
+        this.name = name;
+        this.city = city;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
     /**
      * игрок умеет кричать букву
      */
-    public void shoutTheLetter(){
+    public PlayerAnswer shoutTheLetter(){
         String answer = Game.in.nextLine();
         if(answer.length() == 1) {
-            playerAnswer = new PlayerAnswer(TypeOfAnswer.LETTER, answer);
+            return playerAnswer = new PlayerAnswer(TypeOfAnswer.LETTER, answer);
         }
-        else System.out.println("Некорректное значение! Введите букву");
+        else {
+            System.out.println("Некорректное значение! Введите букву");
+            return null;
+        }
     }
 
     /**
      * игрок умеет кричать слово целиком
      */
-    public void shoutTheWord(){
+    public PlayerAnswer shoutTheWord(){
         String answer = Game.in.nextLine();
-        playerAnswer = new PlayerAnswer(TypeOfAnswer.WORD, answer);
+        return playerAnswer = new PlayerAnswer(TypeOfAnswer.WORD, answer);
     }
 
     /**

@@ -9,6 +9,10 @@ public class QuestionsAndAnswers {
         this.answer = answer;
     }
 
+    public String getAnswer() {
+        return answer;
+    }
+
     public String getQuestion() {
         return question;
     }

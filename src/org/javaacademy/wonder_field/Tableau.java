@@ -1,5 +1,6 @@
 package org.javaacademy.wonder_field;
 
+import java.util.Arrays;
 import java.util.Locale;
 
 public class Tableau {
@@ -7,11 +8,15 @@ public class Tableau {
     private char letter;
     private char[] letterArray;
 
+    public Tableau(String correctWord) {
+        this.correctWord = correctWord;
+    }
+
     public void initTableau (String correctWordFromGame){
         this.correctWord = correctWordFromGame;
-        char[] letterArray = new char[correctWord.length()];
-        for (char ch: letterArray){
-            letterArray[ch] = '_';
+        letterArray = new char[correctWord.length()];
+        for (int i = 0; i < letterArray.length; i++){
+            letterArray[i] = '_';
         }
     }
 
