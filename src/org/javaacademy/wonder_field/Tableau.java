@@ -12,10 +12,10 @@ public class Tableau {
         this.correctWord = correctWord;
     }
 
-    public void initTableau (String correctWordFromGame){
+    public void initTableau(String correctWordFromGame) {
         this.correctWord = correctWordFromGame;
         letterArray = new char[correctWord.length()];
-        for (int i = 0; i < letterArray.length; i++){
+        for (int i = 0; i < letterArray.length; i++) {
             letterArray[i] = '_';
         }
     }
@@ -23,42 +23,40 @@ public class Tableau {
     /**
      * проверка и открытие буквы
      */
-    public boolean openLetter(char letter){
+    public boolean openLetter(char letter) {
         boolean flag = false;
-        for(int i = 0; i < correctWord.length(); i++) {
-            if (letter == correctWord.charAt(i)){
+        for (int i = 0; i < correctWord.length(); i++) {
+            if (letter == correctWord.charAt(i)) {
                 letterArray[i] = correctWord.charAt(i);
                 flag = true;
             }
         }
         if (flag == true) {
             return true;
-        }
-        else return false;
+        } else return false;
     }
 
     /**
      * проверка и открытие слова целиком
      */
-    public boolean openWord (String word){
+    public boolean openWord(String word) {
         boolean flagWord = false;
         String wordInUpperCase = word.toUpperCase();
-        if(wordInUpperCase.equals(correctWord)) {
+        if (wordInUpperCase.equals(correctWord)) {
             letterArray = correctWord.toCharArray();
             flagWord = true;
         }
         if (flagWord == true) {
             return true;
-        }
-        else return false;
+        } else return false;
     }
 
     /**
      * проверка остались ли неизвестные буквы
      */
-    public boolean hasUnknownLetters(){
-        for(int j = 0; j < letterArray.length; j++) {
-            if(letterArray[j] == '_'){
+    public boolean hasUnknownLetters() {
+        for (int j = 0; j < letterArray.length; j++) {
+            if (letterArray[j] == '_') {
                 return true;
             }
         }
@@ -68,21 +66,21 @@ public class Tableau {
     /**
      * отображение в консоли всех букв
      */
-    public void showtableau (){
+    public void showtableau() {
         System.out.println(letterArray);
     }
 
     /**
      * проверка пустая ли строка со словом
      */
-    private boolean wordIsNotEmpty(String word){
+    private boolean wordIsNotEmpty(String word) {
         return !word.isEmpty();
     }
 
     /**
      * проверка пустой ли символ
      */
-    private boolean letterIsNotEmpty(char letter){
+    private boolean letterIsNotEmpty(char letter) {
         return !(letter == '\u0000');
 
     }

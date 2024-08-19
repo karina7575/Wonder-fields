@@ -7,10 +7,9 @@ public class PlayerAnswer {
 
     public PlayerAnswer(TypeOfAnswer typeOfAnswer, String answer) {
         this.typeOfAnswer = typeOfAnswer;
-        if(typeOfAnswer == TypeOfAnswer.WORD) {
+        if (typeOfAnswer == TypeOfAnswer.WORD) {
             this.answerWord = answer;
-        }
-        if(typeOfAnswer == TypeOfAnswer.LETTER) {
+        } else if (typeOfAnswer == TypeOfAnswer.LETTER) {
             this.answerLetter = answer.charAt(0);
         }
     }
